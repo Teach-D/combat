@@ -20,8 +20,6 @@ public class FighterResponseDto {
     private Division division;
     private int ranking;
 
-
-
     public FighterResponseDto(Fighter fighter) {
         this.name = fighter.getName();
         this.nationality = fighter.getNationality();
