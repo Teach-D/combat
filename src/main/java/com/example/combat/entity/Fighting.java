@@ -1,5 +1,7 @@
 package com.example.combat.entity;
 
+import com.example.combat.dto.request.FighterRequestDto;
+import com.example.combat.dto.request.FightingRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,8 +11,9 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 public class Fighting {
 
@@ -24,6 +27,13 @@ public class Fighting {
     private String fightingName;
 
     @OneToMany(mappedBy = "fighting", cascade = CascadeType.ALL)
-    private List<Fighter> fighterList = new ArrayList<>();
+    @Builder.Default
+    private List<Match> matchList = new ArrayList<>();
+
+    public Fighting update(FightingRequestDto requestDto) {
+        this.fightingDate = requestDto.getFightingDate();
+        this.fightingName = requestDto.getFightingName();
+        return this;
+    }
 
 }

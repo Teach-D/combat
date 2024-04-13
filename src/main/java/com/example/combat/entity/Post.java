@@ -19,7 +19,7 @@ public class Post {
     @Column(length = 20)
     private String title;
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
+    private LocalDateTime createDate = LocalDateTime.now();
     @Lob
     private String text;
 
