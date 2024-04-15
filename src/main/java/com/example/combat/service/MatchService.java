@@ -21,7 +21,7 @@ public class MatchService {
     private final MatchRepository matchRepository;
     private final FightingRepository fightingRepository;
 
-    public Match save(String fightingName, Fighter leftFighter, Fighter rightFighter, MatchRequestDto requestDto) {
+    public Match save(String fightingName, String leftFighter, String rightFighter, MatchRequestDto requestDto) {
         Match entity = requestDto.toEntity().builder()
                 .leftFighter(leftFighter)
                 .rightFighter(rightFighter)

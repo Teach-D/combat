@@ -16,8 +16,8 @@ public class MatchResponseDto {
 
     private int sequence;
     private Division division;
-    private Fighter leftFighter;
-    private Fighter rightFighter;
+    private String leftFighter;
+    private String rightFighter;
 
     public MatchResponseDto(Match match) {
         this.sequence = match.getSequence();

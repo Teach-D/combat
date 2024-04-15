@@ -18,8 +18,8 @@ public class MatchRequestDto {
 
     private int sequence;
     private Division division;
-    private Fighter leftFighter;
-    private Fighter rightFighter;
+    private String leftFighter;
+    private String rightFighter;
 
     public Match toEntity() {
         return Match.builder()

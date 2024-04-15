@@ -26,7 +26,7 @@ public class Fighting {
     @Column(length = 20)
     private String fightingName;
 
-    @OneToMany(mappedBy = "fighting", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fighting")
     @Builder.Default
     private List<Match> matchList = new ArrayList<>();
 

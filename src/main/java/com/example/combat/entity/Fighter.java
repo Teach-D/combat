@@ -33,10 +33,6 @@ public class Fighter {
     private Division division;
     private int ranking;
 
-    @OneToMany(mappedBy = "fighter", cascade = CascadeType.ALL)
-    @Builder.Default
-    private List<Record> recordList = new ArrayList<>();
-
     public Fighter update(FighterRequestDto requestDto) {
         this.name = requestDto.getName();
         this.nationality = requestDto.getNationality();

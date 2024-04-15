@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Setter
+//@Setter
 @Entity
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -23,16 +23,14 @@ public class Match {
     @Enumerated(EnumType.STRING)
     private Division division;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "fighting_id")
     private Fighting fighting;
 
-    @OneToOne
-    private Fighter leftFighter;
-    @OneToOne
-    private Fighter rightFighter;
+    private String leftFighter;
+    private String rightFighter;
 
-    public Match createMatch(Fighter leftFighter, Fighter rightFighter) {
+    public Match createMatch(String leftFighter, String rightFighter) {
         this.leftFighter = leftFighter;
         this.rightFighter = rightFighter;
         return this;
@@ -44,5 +42,9 @@ public class Match {
         this.leftFighter = requestDto.getLeftFighter();
         this.rightFighter = requestDto.getRightFighter();
         return this;
+    }
+
+    public void setFighting(Fighting fighting) {
+        this.fighting = fighting;
     }
 }
