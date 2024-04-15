@@ -1,6 +1,7 @@
 package com.example.combat.dto.response;
 
 import com.example.combat.entity.Division;
+import com.example.combat.entity.Fighter;
 import com.example.combat.entity.Match;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
