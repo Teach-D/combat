@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public class FighterResponseDto {
 
+    private Long fighterId;
     private String name;
     private String nationality;
     private int age;
@@ -17,7 +18,7 @@ public class FighterResponseDto {
     private float reach;
 
     private String style;
-    private Division division;
+    private String division;
     private int ranking;
 
     public FighterResponseDto(Fighter fighter) {
@@ -31,5 +32,6 @@ public class FighterResponseDto {
         this.style = fighter.getStyle();
         this.division = fighter.getDivision();
         this.ranking = fighter.getRanking();
+        this.fighterId = fighter.getId();
     }
 }

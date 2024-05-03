@@ -22,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/fighter")
 @RequiredArgsConstructor
+@CrossOrigin
 public class FighterController {
 
     private final FighterService fighterService;
@@ -38,7 +39,7 @@ public class FighterController {
     }
 
     @GetMapping("/list/{division}")
-    public ResponseEntity<List<FighterResponseDto>> getAllByDivision(@PathVariable Division division) {
+    public ResponseEntity<List<FighterResponseDto>> getAllByDivision(@PathVariable String division) {
         List<Fighter> findAll = fighterService.findByDivision(division);
         List<FighterResponseDto> responseDtos = new ArrayList<>();
         for (Fighter fighter : findAll) {

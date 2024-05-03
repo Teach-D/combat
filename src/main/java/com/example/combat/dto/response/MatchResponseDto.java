@@ -14,12 +14,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MatchResponseDto {
 
+    private Long matchId;
     private int sequence;
-    private Division division;
+    private String division;
     private String leftFighter;
     private String rightFighter;
 
     public MatchResponseDto(Match match) {
+        this.matchId = match.getId();
         this.sequence = match.getSequence();
         this.division = match.getDivision();
         this.leftFighter = match.getLeftFighter();

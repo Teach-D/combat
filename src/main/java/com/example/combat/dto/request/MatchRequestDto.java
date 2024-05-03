@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class MatchRequestDto {
 
     private int sequence;
-    private Division division;
+    private String division;
     private String leftFighter;
     private String rightFighter;
 

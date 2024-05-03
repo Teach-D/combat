@@ -29,7 +29,7 @@ public class FighterService {
        return repository.findByName(name).orElseThrow(() -> new IllegalArgumentException("해당 이름의 선수가 등록되지 않음"));
     }
 
-    public List<Fighter> findByDivision(Division division) {
+    public List<Fighter> findByDivision(String division) {
         return repository.findAllByDivision(division);
     }
 

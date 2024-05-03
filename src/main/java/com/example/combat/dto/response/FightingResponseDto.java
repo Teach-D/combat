@@ -10,9 +10,11 @@ public class FightingResponseDto {
 
     private LocalDateTime fightingDate;
     private String fightingName;
+    private Long fightingId;
 
     public FightingResponseDto(Fighting fighting) {
         this.fightingDate = fighting.getFightingDate();
         this.fightingName = fighting.getFightingName();
+        this.fightingId = fighting.getId();
     }
 }
