@@ -22,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/match")
 @RequiredArgsConstructor
+@CrossOrigin
 public class MatchController {
 
     private final MatchService matchService;
@@ -76,8 +77,8 @@ public class MatchController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable(value = "id") Long fightingId) {
-        Match findMatch = matchService.findById(fightingId);
+    public ResponseEntity delete(@PathVariable(value = "id") Long matchId) {
+        Match findMatch = matchService.findById(matchId);
         matchService.delete(findMatch);
 
         return new ResponseEntity(HttpStatus.valueOf(200));

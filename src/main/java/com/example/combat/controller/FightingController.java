@@ -22,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/fighting")
 @RequiredArgsConstructor
+@CrossOrigin
 public class FightingController {
 
     private final FightingService fightingService;

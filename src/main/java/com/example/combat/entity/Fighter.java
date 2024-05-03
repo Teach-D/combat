@@ -29,8 +29,7 @@ public class Fighter {
     private float reach;
 
     private String style;
-    @Enumerated(EnumType.STRING)
-    private Division division;
+    private String division;
     private int ranking;
 
     public Fighter update(FighterRequestDto requestDto) {

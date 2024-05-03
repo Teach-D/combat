@@ -22,7 +22,7 @@ public class FighterRequestDto {
     private float reach;
 
     private String style;
-    private Division division;
+    private String division;
     private int ranking;
 
     public Fighter toEntity() {

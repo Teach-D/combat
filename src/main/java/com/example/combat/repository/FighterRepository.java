@@ -10,6 +10,6 @@ import java.util.Optional;
 public interface FighterRepository extends JpaRepository<Fighter, Long> {
 
     public Optional<Fighter> findByName(String name);
-    public List<Fighter> findAllByDivision(Division division);
+    public List<Fighter> findAllByDivision(String division);
 
 }

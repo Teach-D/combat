@@ -20,10 +20,10 @@ public class Match {
     private Long id;
 
     private int sequence;
-    @Enumerated(EnumType.STRING)
-    private Division division;
+    //@Enumerated(EnumType.STRING)
+    private String division;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fighting_id")
     private Fighting fighting;
 
